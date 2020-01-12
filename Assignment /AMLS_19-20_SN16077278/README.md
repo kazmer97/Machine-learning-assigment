@@ -1,2 +1,30 @@
 # README
 
+* Data_A
+   *	preprocessing_CNN_A1
+   ii.	preprocessing_CNN_A2
+   iii.	face_detection_dlib
+b.	Data_B
+i.	process_B1_svm
+ii.	process_B2_svm
+2.	ModelA.py
+a.	Model_A1
+i.	find_best_CNN
+ii.	gender_CNN_refine
+iii.	gender_CNN_final
+iv.	test_gender_CNN_final
+b.	Model_A2
+i.	find_best_CNN
+ii.	smile_CNN_refine
+iii.	smile_CNN_final
+iv.	test_smile_CNN_final
+3.	ModelB.py
+a.	Model_B1
+i.	find_face_shape_svm
+ii.	train_face_shape_svm
+iii.	test_face_shape_svm
+b.	Model_B2
+i.	find_eye_svm
+ii.	train_eye_svm
+iii.	test_eye_svm
+4.	main.py. 
