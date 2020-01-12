@@ -4,6 +4,8 @@
 Most folders were used during development. 
 Methods with final in their name save to folders with final in their name. Same goes for refine. 
 
+#### The datasets folder should be organised the way it is shown for the code to work
+
 All the code is within the main folder. And each tasks results are saved within their dedicated folder. 
 The methods from Data_Processing should be used to return processed images for model training. 
 
@@ -64,7 +66,19 @@ The methods from Data_Processing should be used to return processed images for m
 │       ├── B2
 │       ├── Data_Processing.py
 │       ├── Datasets
-│       │   └── README\ --\ dataset_AMLS_19-20.md
+│       │   ├── README\ --\ dataset_AMLS_19-20.md
+│       │   ├── cartoon_set
+│       │   │   ├── img
+│       │   │   └── labels.csv
+│       │   ├── cartoon_set_test
+│       │   │   ├── img
+│       │   │   └── labels.csv
+│       │   ├── celeba
+│       │   │   ├── img
+│       │   │   └── labels.csv
+│       │   └── celeba_test
+│       │       ├── img
+│       │       └── labels.csv
 │       ├── ModelA.py
 │       ├── ModelB.py
 │       ├── README.md
@@ -76,4 +90,5 @@ The methods from Data_Processing should be used to return processed images for m
 │       ├── mmod_human_face_detector.dat
 │       └── shape_predictor_68_face_landmarks.dat
 └── README.md
+
 ```
