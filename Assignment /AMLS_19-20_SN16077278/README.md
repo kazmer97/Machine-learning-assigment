@@ -1,13 +1,15 @@
 # README
 
-* Data_A
-   *	preprocessing_CNN_A1
-   ii.	preprocessing_CNN_A2
-   iii.	face_detection_dlib
-b.	Data_B
-i.	process_B1_svm
-ii.	process_B2_svm
-2.	ModelA.py
+
+* Data_Processing
+  * Data_A
+     * preprocessing_CNN_A1
+     * preprocessing_CNN_A2
+     * face_detection_dlib
+  * Data_B
+    * process_B1_svm
+    * process_B2_svm
+* ModelA.py
 a.	Model_A1
 i.	find_best_CNN
 ii.	gender_CNN_refine
