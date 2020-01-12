@@ -19,10 +19,6 @@ from keras.callbacks.callbacks import EarlyStopping, ModelCheckpoint
 from keras.callbacks.tensorboard_v2 import TensorBoard
 from keras.optimizers import Adam
 
-# from tensorflow.keras.preprocessing.image import ImageDataGenerator
-# from tensorflow.keras.models import Sequential, load_model
-# from tensorflow.keras.layers import Dense, Dropout, Activation, Flatten, Conv2D, MaxPooling2D
-# from tensorflow.keras.callbacks import TensorBoard, EarlyStopping, ModelCheckpoint
 
 
 import time 
@@ -95,12 +91,16 @@ class Model_A1():
 		pass
 	
 
+
+	# this function manual changes were made to the model to test different hyper parameters
+	# the results of each test were tracked in tensorbaord. The logs were saved in the model refine subfolder, as well as the 
+	# best model from each run for backup
 	def gender_CNN_refine(self, X,y):
 
 		learning_rates = [0.001]
 		droputs = [0.15]
 
-		best_model = pd.DataFrame(columns=["name","accuracy","loss"])
+		# best_model = pd.DataFrame(columns=["name","accuracy","loss"])
 		for learn in learning_rates:
 			for drop in droputs:
 
@@ -277,7 +277,7 @@ class Model_A1():
 
 class Model_A2():
 
-
+	# NOT in USE the function is not used in the final implementation. it was an atempt at solving the task with an SVM
 	def svm1(self,):
 		
 		from sklearn.svm import SVC
@@ -308,6 +308,7 @@ class Model_A2():
 
 		return pred_lin
 
+	# NOT in USE
 	def test_svm(self,):
 		pickle_in = open("A2/X_test_svm.pickle","rb")
 		X_test = pickle.load(pickle_in)
@@ -324,7 +325,7 @@ class Model_A2():
 
 		return result
 
-
+	# NOT in USE the function is not used in the final implementation. it was an atempt at solving the task with an SVM
 	def find_smile_detection_svm(self,X,y,X_test,y_test):
 		from sklearn.svm import SVC
 		from sklearn.model_selection import GridSearchCV
@@ -334,32 +335,32 @@ class Model_A2():
 
 		score = 'recall'
 
-		# clf = GridSearchCV(SVC(), tuned_parameters, scoring = "{}_weighted".format(score))
+		clf = GridSearchCV(SVC(), tuned_parameters, scoring = "{}_weighted".format(score))
 
-		# clf.fit(X,y)
-
-		# print("Best parameters set found on development set:")
-
-		# print()
-		# print(clf.best_params_)
-		# print()
-		# print("Grid scores on development set:")
-		# print()
-		# means = clf.cv_results_['mean_test_score']
-		# stds = clf.cv_results_['std_test_score']
-		# for mean, std, params in zip(means, stds, clf.cv_results_['params']):
-		#     print("%0.3f (+/-%0.03f) for %r"
-		#           % (mean, std * 2, params))
-		# print()
-
-		# print("Detailed classification report:")
-		# print()
-		# print("The model is trained on the full development set.")
-		# print("The scores are computed on the full evaluation set.")
-		# print()
-		clf = SVC(kernel = 'linear', C = 10, gamma = 0.1, verbose = True)
 		clf.fit(X,y)
-		print(clf.score(X_test,y_test))
+
+		print("Best parameters set found on development set:")
+
+		print()
+		print(clf.best_params_)
+		print()
+		print("Grid scores on development set:")
+		print()
+		means = clf.cv_results_['mean_test_score']
+		stds = clf.cv_results_['std_test_score']
+		for mean, std, params in zip(means, stds, clf.cv_results_['params']):
+		    print("%0.3f (+/-%0.03f) for %r"
+		          % (mean, std * 2, params))
+		print()
+
+		print("Detailed classification report:")
+		print()
+		print("The model is trained on the full development set.")
+		print("The scores are computed on the full evaluation set.")
+		print()
+		# clf = SVC(kernel = 'linear', C = 10, gamma = 0.1, verbose = True)
+		# clf.fit(X,y)
+		# print(clf.score(X_test,y_test))
 		y_true, y_pred = y_test, clf.predict(X_test)
 		print(classification_report(y_true, y_pred))
 		# print()
@@ -468,6 +469,10 @@ class Model_A2():
 
 
 
+
+	# this function manual changes were made to the model to test different hyper parameters
+	# the results of each test were tracked in tensorbaord. The logs were saved in the model refine subfolder, as well as the 
+	# best model from each run for backup
 	def smile_CNN_refine(self,X,y):
 
 		# X = pickle.load(open("{}/A2/X_train.pickle".format(os.getcwd()),"rb"))
