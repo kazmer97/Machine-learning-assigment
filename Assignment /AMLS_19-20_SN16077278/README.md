@@ -1,6 +1,9 @@
 # README
 ### Organisation of the folders
 
+Most folders were used during development. 
+Methods with final in their name save to folders with final in their name. Same goes for refine. 
+
 All the code is within the main folder. And each tasks results are saved within their dedicated folder. 
 The methods from Data_Processing should be used to return processed images for model training. 
 
