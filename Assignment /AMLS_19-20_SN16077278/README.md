@@ -37,7 +37,7 @@ The methods from Data_Processing should be used to return processed images for m
 
 ### Folder organisation
 
-''' bash
+``` bash
 .
 ├── Assignment\ 
 │   └── AMLS_19-20_SN16077278
@@ -73,4 +73,4 @@ The methods from Data_Processing should be used to return processed images for m
 │       ├── mmod_human_face_detector.dat
 │       └── shape_predictor_68_face_landmarks.dat
 └── README.md
-'''
+```
