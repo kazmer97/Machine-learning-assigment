@@ -13,56 +13,10 @@ import math
 
 import Data_Processing
 import ModelA
-# ======================================================================================================================
-#### Data preprocessing
-IMG_SIZE = 50
-
-a = Data_Processing.Data_A()
-# The below module has already been executed and saved into pickles
-
-# a.processing_CNN_A1(IMG_SIZE) # create training data
-
-#### Load preprocessed data from pickle
-
-# The pickles contain the seperated test and training data set. The split has been done as instructed.
-# The images saved in the pickle have been croped to only contain faces.
-# The pickles contain numerical image data prepared as input for a convolutional neural neutwork
-# 
-
-
-
-# Non-cropped images
-
-# pickle_in = open("A1/X_train_{}x{}.pickle".format(IMG_SIZE,IMG_SIZE),"rb")
-# X_train = np.asarray(pickle.load(pickle_in))
-
-# pickle_in = open("A1/y_train_{}x{}.pickle".format(IMG_SIZE,IMG_SIZE),"rb")
-# y_train = np.asarray(pickle.load(pickle_in))
-
-# pickle_in = open("A1/X_test_{}x{}.pickle".format(IMG_SIZE,IMG_SIZE),"rb")
-# X_test = np.asarray(pickle.load(pickle_in))
-
-# pickle_in = open("A1/y_test_{}x{}.pickle".format(IMG_SIZE,IMG_SIZE),"rb")
-# y_test = np.asarray(pickle.load(pickle_in))
-
-# Cropped images
-
-# pickle_in = open("A1/X_train_c.pickle","rb")
-# X_train = pickle.load(pickle_in)
-
-# pickle_in = open("A1/y_train_c.pickle","rb")
-# y_train = pickle.load(pickle_in)
-
-# pickle_in = open("A1/X_test_c.pickle","rb")
-# X_test = pickle.load(pickle_in)
-
-# pickle_in = open("A1/y_test_c.pickle","rb")
-# y_test = pickle.load(pickle_in)
-
-
 
 # # ======================================================================================================================
 # # Task A1
+a = Data_Processing.Data_A()
 m = ModelA.Model_A1()
 
 # best_model = m.find_best_CNN(X_train, y_train, X_test, y_test) # The line was already run, it creates 27 different networks with logs
@@ -161,16 +115,16 @@ print("Results of each model on test set seperated from original dataset and add
 
 print("TA1 test set 1: test_accuracy: {} ; test_loss: {}".format(res_A1[1],res_A1[0]))
 
-print("TA1 test set 1: test_accuracy: {} ; test_loss: {}".format(res_A1_1[1],res_A1_1[0]))
+print("TA1 test set 2: test_accuracy: {} ; test_loss: {}".format(res_A1_1[1],res_A1_1[0]))
 
 print("TA2 test set 1: test_accuracy: {} ; test_loss: {}".format(res_A2[1],res_A2[0]))
 
-print("TA2 test set 1: test_accuracy: {} ; test_loss: {}".format(res_A2_1[1],res_A2_1[0]))
+print("TA2 test set 2: test_accuracy: {} ; test_loss: {}".format(res_A2_1[1],res_A2_1[0]))
 
-print("TB1 test set 1: test_accuracy: {} ; test_loss: {}".format(res_B1[1],res_B1[0]))
-print("TB1 test set 1: test_accuracy: {} ; test_loss: {}".format(res_B1_1[1],res_B1_1[0]))
+print("TB1 test set 1: classification report: {} ".format(res_B1))
+print("TB1 test set 2: classification report: {} ".format(res_B1_1))
 
-print("TB2 test set 1: test_accuracy: {} ; test_loss: {}".format(res_B2[1],res_B2[0]))
-print("TB2 test set 1: test_accuracy: {} ; test_loss: {}".format(res_B2_1[1],res_B2_1[0]))
+print("TB2 test set 1: classification report: {} ".format(res_B2))
+print("TB2 test set 2: classification report: {} ".format(res_B2_1))
 
 
